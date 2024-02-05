@@ -25,23 +25,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
-        CalendarRepository calendarRepository = new CalendarRepository(this.getApplication());
-        EventRepository eventRepository = new EventRepository(this.getApplication());
-
-        EventViewModel eventViewModel = new ViewModelProvider(this).get(EventViewModel.class);
-
-        calendarRepository.insert(new Calendar("testCalendar"));
-        eventRepository.insert(new Event( 1, "TEST_EVENT"));
-
-//        testButton.setOnClickListener(v -> {
-//            eventViewModel.getEventsByCalendarId(1).observe(this, events -> {
-//                Log.d(TAG, "onCreate: " + events.get(0).getNameEvent());
-//            });
-//        });
-
-
     }
 
 

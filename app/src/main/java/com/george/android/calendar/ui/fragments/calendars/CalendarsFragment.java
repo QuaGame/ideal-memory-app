@@ -16,10 +16,8 @@ public class CalendarsFragment extends Fragment {
 
     private FragmentCalendarsBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        CallendarViewModel homeViewModel =
-                new ViewModelProvider(this).get(CallendarViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        CallendarViewModel homeViewModel = new ViewModelProvider(this).get(CallendarViewModel.class);
 
         binding = FragmentCalendarsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -35,3 +33,4 @@ public class CalendarsFragment extends Fragment {
         binding = null;
     }
 }
+

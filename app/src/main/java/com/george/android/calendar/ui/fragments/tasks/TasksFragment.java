@@ -16,10 +16,8 @@ public class TasksFragment extends Fragment {
 
     private FragmentTasksBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        TasksViewModel tasksViewModel =
-                new ViewModelProvider(this).get(TasksViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        TasksViewModel tasksViewModel = new ViewModelProvider(this).get(TasksViewModel.class);
 
         binding = FragmentTasksBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
