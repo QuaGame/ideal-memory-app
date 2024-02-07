@@ -23,6 +23,17 @@ public class EventViewModel extends AndroidViewModel {
     public long insert(Event event) {
         return eventRepository.insert(event);
     }
+    public void updateEvent(Event event) {
+        eventRepository.updateEvent(event);
+    }
+
+    public void deleteEventById(long eventId) {
+        eventRepository.deleteEventById(eventId);
+    }
+
+    public LiveData<Event> getEventById(long eventId) {
+        return eventRepository.getEventById(eventId);
+    }
 
     public LiveData<List<Event>> getEventsByCalendarId(long calendarId) {
         return eventRepository.getEventsByCalendarId(calendarId);

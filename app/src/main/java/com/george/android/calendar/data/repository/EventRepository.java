@@ -43,12 +43,20 @@ public class EventRepository {
         return eventId;
     }
 
+    public void updateEvent(Event event) {
+        service.execute(() -> eventDao.updateEvent(event));
+    }
+
+    public void deleteEventById(long eventId) {
+        service.execute(() -> eventDao.deleteEventById(eventId));
+    }
+
+    public LiveData<Event> getEventById(long eventId) {
+        return eventDao.getEventById(eventId);
+    }
+
     public LiveData<List<Event>> getEventsByCalendarId(long calendarId) {
-        MutableLiveData<List<Event>> eventLiveData = new MutableLiveData<>();
-
-        service.execute(() -> eventLiveData.postValue(eventDao.getEventsByCalendarId(calendarId)));
-
-        return eventLiveData;
+        return eventDao.getEventsByCalendarId(calendarId);
     }
 
 

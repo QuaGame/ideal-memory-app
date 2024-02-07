@@ -4,9 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.george.android.calendar.data.model.Calendar;
 import com.george.android.calendar.data.repository.CalendarRepository;
+
+import java.util.List;
 
 public class CalendarViewModel extends AndroidViewModel {
 
@@ -21,6 +24,20 @@ public class CalendarViewModel extends AndroidViewModel {
         return calendarRepository.insert(calendar);
     }
 
+    public void updateCalendarById(String nameCalendar, long calendarId) {
+        calendarRepository.updateCalendarById(nameCalendar, calendarId);
+    }
 
+    public void deleteCalendarById(long calendarId) {
+        calendarRepository.deleteCalendarById(calendarId);
+    }
+
+    public LiveData<Calendar> getCalendarById(long calendarId) {
+        return calendarRepository.getCalendarById(calendarId);
+    }
+
+    public LiveData<List<Calendar>> getAllCalendars() {
+        return calendarRepository.getAllCalendars();
+    }
 
 }
